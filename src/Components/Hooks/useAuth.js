@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
@@ -33,6 +33,14 @@ const useAUth = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
+  const location = useLocation()
+  
+  const from = location.state?.from?.pathname || "/";
+  if(SigninUser){
+    navigate(from, { replace: true });
+
+  }
+  
 
   const signupHandeler = async (e) => {
     e.preventDefault();
@@ -71,9 +79,10 @@ const useAUth = () => {
       toast.error("Password field cannot be empty");
     } else {
       signInWithEmailAndPassword(email, password);
-      navigate("/");
+     
       toast.success("Login succesfully");
     }
+   
   };
 
  

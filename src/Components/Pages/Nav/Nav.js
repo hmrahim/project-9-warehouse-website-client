@@ -20,6 +20,9 @@ const Nav = () => {
               <li className="nav-item m-0">
                 <NavLink activeClassName="active-class" className="nav-link  m-0" aria-current="page" to="/">Home</NavLink>
               </li>
+              <li className="nav-item m-0">
+                <NavLink activeClassName="active-class" className="nav-link  m-0" aria-current="page" to="/managestock">Manage Stock</NavLink>
+              </li>
               
                 
               

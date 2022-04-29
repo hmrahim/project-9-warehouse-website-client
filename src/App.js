@@ -11,6 +11,8 @@ import Footer from './Components/Pages/Footer/Footer';
 import ResetPass from './Components/Pages/ResetPass/ResetPass';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import RequireAuth from './Components/Pages/RequireAuth/RequireAuth';
+import ManageStock from './Components/Pages/ManageStock/ManageStock';
 function App() {
   return (
     <div className="App " >
@@ -20,6 +22,13 @@ function App() {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/signup' element={<Signup></Signup>}></Route>
       <Route path='/resetpass' element={<ResetPass></ResetPass>}></Route>
+      <Route path='/managestock' element={
+      <RequireAuth>
+        <ManageStock></ManageStock>
+
+      </RequireAuth>}>
+
+      </Route>
     </Routes>
     <ToastContainer></ToastContainer>
     <Footer></Footer>
