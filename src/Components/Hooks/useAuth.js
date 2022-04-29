@@ -78,6 +78,13 @@ const useAUth = () => {
 
  
 
+  const logout = (e) => {
+    e.preventDefault();
+    signOut(auth);
+    navigate("/login");
+  };
+
+
 
   return { handleSignin, signupHandeler, logout,resetpass };
 };
