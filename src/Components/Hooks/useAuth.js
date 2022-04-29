@@ -61,6 +61,23 @@ const useAUth = () => {
     }
   };
 
+  const handleSignin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    if (!email) {
+      toast.error("Email field cannot be empty");
+    } else if (!password) {
+      toast.error("Password field cannot be empty");
+    } else {
+      signInWithEmailAndPassword(email, password);
+      navigate("/");
+      toast.success("Login succesfully");
+    }
+  };
+
+ 
+
 
   return { handleSignin, signupHandeler, logout,resetpass };
 };
