@@ -84,7 +84,19 @@ const useAUth = () => {
     navigate("/login");
   };
 
+  const resetpass =async (e) => {
+      e.preventDefault()
+      const email = e.target.email.value
+      if(!email){
+          toast.error("Please provide a valid email")
+      }else{
+        await sendPasswordResetEmail(email)
+        toast.success(" Reset email sent to your email")
 
+      }
+   
+
+  };
 
   return { handleSignin, signupHandeler, logout,resetpass };
 };
