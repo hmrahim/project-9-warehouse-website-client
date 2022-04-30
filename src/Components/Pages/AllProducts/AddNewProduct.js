@@ -1,7 +1,10 @@
 import React from 'react';
 import useSendData from '../../Hooks/useSendData';
+import { useCategorie } from '../../Hooks/UseGetData';
 
 const AddNewProduct = () => {
+  const [categories,setCategories] =useCategorie()
+ 
     const {sendProductDataHandeler} = useSendData()
     return (
         <div>
@@ -26,9 +29,28 @@ const AddNewProduct = () => {
         </div>
         <div className="mb-3">
           <label for="formGroupExampleInput" className="form-label">
+            Categorie
+          </label>
+          <select name="categorie"  className='form-control' id="">
+              <option selected>Choose Categorie</option>
+              {
+                categories.map(categorie=> <option value={categorie.categorie}>{categorie.categorie}</option>)
+              }
+              
+              
+          </select>
+        </div>
+        <div className="mb-3">
+          <label for="formGroupExampleInput" className="form-label">
             Price
           </label>
-          <input name="price" type="text" className="form-control" />
+          <input name="price" type="number" className="form-control" />
+        </div>
+        <div className="mb-3">
+          <label for="formGroupExampleInput" className="form-label">
+            Quantity
+          </label>
+          <input name="quantity" type="number" className="form-control" />
         </div>
         <div className="mb-3">
           <label for="formGroupExampleInput" className="form-label">

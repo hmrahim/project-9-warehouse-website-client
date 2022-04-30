@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import axios from "axios";
+
 
 const useCategorie = ()=> {
     const [categories,setCategories] = useState([])
@@ -14,7 +14,9 @@ const useCategorie = ()=> {
     },[categories])
     return [categories,setCategories]
 
-}
+};
+
+
 
 
 

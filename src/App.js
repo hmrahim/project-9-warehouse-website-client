@@ -19,7 +19,7 @@ import Categories from './Components/Pages/Categories/Categories';
 import AddNewCategorie from './Components/Pages/Categories/AddNewCategorie';
 function App() {
   return (
-    <div className="App " >
+    <div className="App " style={{height:"100vh"}} >
     <Nav></Nav>
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>

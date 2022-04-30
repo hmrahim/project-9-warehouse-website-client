@@ -33,7 +33,7 @@ const Categories = () => {
                 <h3 className="text-center">No data available</h3>
               ) : (
                 categories.map((categorie) => (
-                  <tr>
+                  <tr key={categorie._id}>
                     <td>{categorie.categorie}</td>
                     <td className="text-center">
                       <Link
