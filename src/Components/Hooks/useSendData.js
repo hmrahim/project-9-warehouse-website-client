@@ -23,7 +23,26 @@ const useSendData = ()=> {
 
     }
 
-   
+    const sendCategorieDataHandeler =async (e)=> {
+      e.preventDefault()
+      const categorie = e.target.categorie.value
+      if(!categorie){
+        toast.error("You cannot provide empty this field")
+        
+      }
+      const data = {categorie}
+      const url = "http://localhost:5000/categorie"
+      const sendData = await  axios.post(url,data)
+      if(sendData){
+        toast.success("Data inserted successfully")
+      console.log(sendData);
+      e.target.reset()
+
+      }
+      
+
+
+    }
 
 
 
