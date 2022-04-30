@@ -6,7 +6,6 @@ import useAUth from '../../Hooks/useAuth';
 
 const Nav = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
   const {logout} = useAUth()
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-primary">
