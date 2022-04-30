@@ -13,6 +13,10 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Components/Pages/RequireAuth/RequireAuth';
 import ManageStock from './Components/Pages/ManageStock/ManageStock';
+import AllProducts from './Components/Pages/AllProducts/AllProducts';
+import AddNewProduct from './Components/Pages/AllProducts/AddNewProduct';
+import Categories from './Components/Pages/Categories/Categories';
+import AddNewCategorie from './Components/Pages/Categories/AddNewCategorie';
 function App() {
   return (
     <div className="App " >
@@ -22,13 +26,13 @@ function App() {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/signup' element={<Signup></Signup>}></Route>
       <Route path='/resetpass' element={<ResetPass></ResetPass>}></Route>
-      <Route path='/managestock' element={
-      <RequireAuth>
-        <ManageStock></ManageStock>
-
-      </RequireAuth>}>
-
-      </Route>
+      <Route path='/managestock' element={ <RequireAuth> <ManageStock></ManageStock> </RequireAuth>}>
+        <Route path='products' element={<AllProducts></AllProducts>}></Route>
+        <Route path='addproducts' element={<AddNewProduct></AddNewProduct>}></Route>
+        <Route path='categories' element={<Categories></Categories>}></Route>
+        <Route path='addcategorie' element={<AddNewCategorie></AddNewCategorie>}></Route>
+        
+         </Route>
     </Routes>
     <ToastContainer></ToastContainer>
     <Footer></Footer>
