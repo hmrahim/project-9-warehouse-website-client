@@ -3,7 +3,19 @@ import { Link } from "react-router-dom";
 import { useCategorie, deleteData } from "../../Hooks/UseGetData";
 import axios from "axios";
 
-
+const Categories = () => {
+  const [categories, setCategories] = useCategorie();
+  const deleteData = async (id) => {
+    const proced = window.confirm("Are you sure to delete data");
+    if (proced) {
+      const url = `http://localhost:5000/categorie/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    }
+  };
 
   return (
     <div className="bg-white p-2">
