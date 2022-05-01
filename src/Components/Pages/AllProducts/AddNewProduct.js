@@ -7,7 +7,7 @@ const AddNewProduct = () => {
  
     const {sendProductDataHandeler} = useSendData()
     return (
-        <div>
+        <div className='px-2'>
       <h2 className="text-center">Add New Product</h2> <hr />
       <form onSubmit={sendProductDataHandeler} action="">
         <div className="mb-3">
@@ -57,6 +57,14 @@ const AddNewProduct = () => {
             Image link
           </label>
           <input name="link" type="text" className="form-control" />
+        </div>
+        <div className="mb-3">
+          <label for="formGroupExampleInput" className="form-label">
+            Description
+          </label> <br />
+          <textarea name="desc" id="" cols="50" rows="5">
+
+          </textarea>
         </div>
 
         <div className="mb-3">

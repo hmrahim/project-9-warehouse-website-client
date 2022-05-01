@@ -13,15 +13,22 @@ const useSendData = ()=> {
         const link = e.target.link.value
         const categorie = e.target.categorie.value
         const quantity = e.target.quantity.value
-        if(!title || !unit || !price || !link || !categorie || !quantity){
+        const desc = e.target.desc.value
+        if(!title || !unit || !price || !link || !categorie || !quantity || !desc){
           toast.error("You cannot provide empty any field")
 
-        }
-        const data = {title,unit,price,link,categorie,quantity}
+        }else{
+        const data = {title,unit,price,link,categorie,quantity,desc}
         const url = "http://localhost:5000/product"
       const sendData = await  axios.post(url,data)
-      toast.success("Data inserted successfully")
+      if(sendData){
+        e.target.reset()
+        toast.success("Data inserted successfully")
         console.log(sendData);
+
+      }
+    }
+     
 
     }
 

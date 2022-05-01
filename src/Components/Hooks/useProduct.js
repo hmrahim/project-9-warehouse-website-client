@@ -14,4 +14,7 @@ const useProducts = ()=> {
 
 };
 
-export default useProducts
+
+
+
+export  {useProducts}
