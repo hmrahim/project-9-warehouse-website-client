@@ -2,8 +2,12 @@ import React from "react";
 import Banner from "../Banner/Banner";
 import ProductCard from "../ProductCard/ProductCard";
 import Products from "../Products/Products";
+import getProducts from "../../Hooks/useProduct"
 
 const Home = () => {
+  const {useProducts} = getProducts()
+  const [products,setProducts] = useProducts()
+  
   return (
     <div className="container my-4">
       <h3 className="text-center text-uppercase">all products</h3>
@@ -22,11 +26,11 @@ const Home = () => {
       </select>
       </div>
       <div className="row">
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
+        {
+          products.map(product=> <ProductCard key={product._id} product={product}></ProductCard> )
+        }
+        
+    
       </div>
     </div>
   );
