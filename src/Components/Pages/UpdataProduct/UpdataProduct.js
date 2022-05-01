@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 import useGetData from '../../Hooks/UseGetData';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UpdataProduct = () => {
   const {id} = useParams()
@@ -31,21 +34,52 @@ const UpdataProduct = () => {
      })
      
    },[])
+
+const updateProduct =async(e)=> {
+  e.preventDefault()
+  const title = e.target.title.value
+  const unit = e.target.unit.value
+  const price = e.target.price.value
+  const link = e.target.link.value
+  const categorie = e.target.categorie.value
+  const quantity = e.target.quantity.value
+  const desc = e.target.desc.value
+
+  const data = {title,unit,price,link,categorie,quantity,desc}
+        const url = `http://localhost:5000/product/${id}`
+  if(!title || !unit || !price || !link || !categorie || !quantity || !desc){
+  toast.error("You cannot provide empty any field")
+
+  }else{
+    fetch(url,{
+      method:"PUT",
+      headers:{
+        "Content-Type" : "Application/json"
+      },
+      body:JSON.stringify(data)
+    })
+    .then(res=>res.json())
+    .then(data=> {
+      toast.success("Product updated successfully!")
+    })
+  }
+}
+
     return (
         <div className='px-2'>
         <h2 className="text-center">Update Product</h2> <hr />
-        <form  action="">
+        <form onSubmit={updateProduct}  action="">
           <div className="mb-3">
             <label for="formGroupExampleInput" className="form-label">
               Title
             </label>
-            <input value={title} name="title" type="text" className="form-control" />
+            <input onChange={(e)=> setTitle(e.target.value)} value={title} name="title" type="text" className="form-control" />
           </div>
           <div className="mb-3">
             <label for="formGroupExampleInput" className="form-label">
               Unit
             </label>
-            <select value={unit} name="unit"  className='form-control' id="">
+            <select onChange={(e)=> setUnit(e.target.value)} value={unit} name="unit"  className='form-control' id="">
                 <option selected>Choose Unit</option>
                 <option value="1kg">1kg</option>
                 <option value="4pcs">4pcs</option>
@@ -56,7 +90,7 @@ const UpdataProduct = () => {
             <label for="formGroupExampleInput" className="form-label">
               Categorie
             </label>
-            <select value={categorie} name="categorie"  className='form-control' id="">
+            <select onChange={(e)=> setCategorie(e.target.value)} value={categorie} name="categorie"  className='form-control' id="">
                 <option selected>Choose Categorie</option>
                 {
                   categories.map(categorie=> <option value={categorie.categorie}>{categorie.categorie}</option>)
@@ -69,25 +103,25 @@ const UpdataProduct = () => {
             <label for="formGroupExampleInput" className="form-label">
               Price
             </label>
-            <input value={price} name="price" type="number" className="form-control" />
+            <input onChange={(e)=> setPrice(e.target.value)} value={price} name="price" type="number" className="form-control" />
           </div>
           <div className="mb-3">
             <label for="formGroupExampleInput" className="form-label">
               Quantity
             </label>
-            <input value={qty} name="quantity" type="number" className="form-control" />
+            <input onChange={(e)=> setQty(e.target.value)} value={qty} name="quantity" type="number" className="form-control" />
           </div>
           <div className="mb-3">
             <label for="formGroupExampleInput" className="form-label">
               Image link
             </label>
-            <input value={link} name="link" type="text" className="form-control" />
+            <input onChange={(e)=> setLink(e.target.value)} value={link} name="link" type="text" className="form-control" />
           </div>
           <div className="mb-3">
             <label for="formGroupExampleInput" className="form-label">
               Description
             </label> <br />
-            <textarea value={desc} name="desc" id="" cols="50" rows="5">
+            <textarea onChange={(e)=> setDesc(e.target.value)} value={desc} name="desc" id="" cols="50" rows="5">
   
             </textarea>
           </div>
