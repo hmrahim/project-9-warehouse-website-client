@@ -39,7 +39,7 @@ const Categories = () => {
                     <td>{categorie.categorie}</td>
                     <td className="text-center">
                       <Link
-                        to=""
+                        to={`/managestock/updatecategorie/${categorie._id}`}
                         className="btn btn-primary btn-sm bg-primary "
                       >
                         Edit
