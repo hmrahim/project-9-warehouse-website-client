@@ -1,7 +1,9 @@
-import { useProducts } from "./useProduct"
+
+import getProducts from "./useProduct"
 
 
 const useApi = ()=> {
+    const {useProducts} = getProducts()
     const [products,setProducts] = useProducts()
     const deleteProduct = (id)=> {
         

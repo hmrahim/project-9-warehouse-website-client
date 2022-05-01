@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 
 
+const useGetData = ()=> {
+
+
+
+
 const useCategorie = ()=> {
     const [categories,setCategories] = useState([])
 
@@ -14,11 +19,15 @@ const useCategorie = ()=> {
     },[categories])
     return [categories,setCategories]
 
-};
+}
+
+return {useCategorie}
+
+}
 
 
 
 
 
 
-export {useCategorie}
+export default useGetData

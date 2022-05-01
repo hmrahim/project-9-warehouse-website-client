@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCategorie, deleteData } from "../../Hooks/UseGetData";
+import useGetData from "../../Hooks/UseGetData";
 import axios from "axios";
 
 const Categories = () => {
+  const {useCategorie} = useGetData()
   const [categories, setCategories] = useCategorie();
+  
   const deleteData = async (id) => {
     const proced = window.confirm("Are you sure to delete data");
     if (proced) {

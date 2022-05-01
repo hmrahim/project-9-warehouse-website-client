@@ -17,6 +17,7 @@ import AllProducts from './Components/Pages/AllProducts/AllProducts';
 import AddNewProduct from './Components/Pages/AllProducts/AddNewProduct';
 import Categories from './Components/Pages/Categories/Categories';
 import AddNewCategorie from './Components/Pages/Categories/AddNewCategorie';
+import UpdataProduct from './Components/Pages/UpdataProduct/UpdataProduct';
 function App() {
   return (
     <div className="App " style={{height:"100vh"}} >
@@ -31,6 +32,7 @@ function App() {
         <Route path='addproducts' element={<AddNewProduct></AddNewProduct>}></Route>
         <Route path='categories' element={<Categories></Categories>}></Route>
         <Route path='addcategorie' element={<AddNewCategorie></AddNewCategorie>}></Route>
+        <Route path='updateproduct/:id' element={<UpdataProduct></UpdataProduct>}></Route>
         
          </Route>
     </Routes>

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useProducts } from "../../Hooks/useProduct";
 import { useApi } from "../../Hooks/useApi";
+import getProducts from "../../Hooks/useProduct";
 
 
 const AllProducts = () => {
+  const {useProducts} = getProducts()
   const [products, setProducts] = useProducts();
 const {deleteProduct} = useApi()
   return (
@@ -30,7 +31,7 @@ const {deleteProduct} = useApi()
               <td className="text-center">{product.quantity}</td>
               
               <td>
-              <Link className="btn btn-primary btn-sm ms-2 mt-2" to="">Edit</Link>
+              <Link className="btn btn-primary btn-sm ms-2 mt-2" to={`/managestock/updateproduct/${product._id}`}>Edit</Link>
               <Link className="btn btn-info btn-sm ms-2 mt-2" to="">View</Link>
               <Link onClick={()=> deleteProduct(product._id)} className="btn btn-danger btn-sm ms-2 mt-2" to="">Delete</Link>
               </td>

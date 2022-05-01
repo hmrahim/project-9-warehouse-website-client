@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
 
+
+const getProducts = ()=> {
+
 const useProducts = ()=> {
     const [products,setProducts] = useState([])
     useEffect(()=> {
@@ -17,4 +20,11 @@ const useProducts = ()=> {
 
 
 
-export  {useProducts}
+return {useProducts}
+}
+
+export default getProducts
+
+
+
+

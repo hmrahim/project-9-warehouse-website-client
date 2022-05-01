@@ -1,8 +1,9 @@
 import React from 'react';
 import useSendData from '../../Hooks/useSendData';
-import { useCategorie } from '../../Hooks/UseGetData';
+import useGetData from '../../Hooks/UseGetData';
 
 const AddNewProduct = () => {
+  const {useCategorie} = useGetData()
   const [categories,setCategories] =useCategorie()
  
     const {sendProductDataHandeler} = useSendData()
