@@ -2,9 +2,12 @@
 import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {useAuthState} from "react-firebase-hooks/auth"
+import auth from "../../firebase.init";
 
 
 const useSendData = ()=> {
+  const [user,loading,error] = useAuthState(auth)
     const sendProductDataHandeler= async(e)=>{
         e.preventDefault()
         const title = e.target.title.value
@@ -14,11 +17,12 @@ const useSendData = ()=> {
         const categorie = e.target.categorie.value
         const quantity = e.target.quantity.value
         const desc = e.target.desc.value
+        const email = user.email
         if(!title || !unit || !price || !link || !categorie || !quantity || !desc){
           toast.error("You cannot provide empty any field")
 
         }else{
-        const data = {title,unit,price,link,categorie,quantity,desc}
+        const data = {title,unit,price,link,categorie,quantity,desc,email}
         const url = "http://localhost:5000/product"
       const sendData = await  axios.post(url,data)
       if(sendData){

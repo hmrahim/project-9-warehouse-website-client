@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {useAuthState} from "react-firebase-hooks/auth"
+import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const ProductCard = (props) => {
@@ -7,10 +8,11 @@ const ProductCard = (props) => {
   const {title,unit,price,link,_id}= props.product
   const [user,loading,error] = useAuthState(auth)
   const [added,setAdded] = useState(false)
-
+  const navigate= useNavigate()
   
 
   const order = (product)=> {
+   
     const email = user.email
    
     const obj = product
@@ -50,7 +52,7 @@ const ProductCard = (props) => {
          
           </p>
           <div className="d-flex justify-content-center">
-          <button onClick={()=> order(product)} className="btn btn-primary px-3">{added ? "Cancel order" : "Order"}</button>
+          <button onClick={()=>navigate(`/details/${_id}`)} className="btn btn-primary px-3">{added ? "Cancel order" : "Order"}</button>
 
           </div>
         

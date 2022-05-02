@@ -32,7 +32,7 @@ const {deleteProduct} = useApi()
               
               <td>
               <Link className="btn btn-primary btn-sm ms-2 mt-2" to={`/managestock/updateproduct/${product._id}`}>Edit</Link>
-              <Link className="btn btn-info btn-sm ms-2 mt-2" to="">View</Link>
+             
               <Link onClick={()=> deleteProduct(product._id)} className="btn btn-danger btn-sm ms-2 mt-2" to="">Delete</Link>
               </td>
             </tr>

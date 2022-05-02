@@ -22,9 +22,10 @@ import UpdateCategorie from './Components/Pages/UpdateCategorie/UpdateCategorie'
 import NotFound from './Components/Pages/NotFound/NotFound';
 import Banner from './Components/Pages/Banner/Banner';
 import MyOrder from './Components/Pages/MyOrder/MyOrder';
+import ProductDetails from './Components/Pages/ProductDetails/ProductDetails';
 function App() {
   return (
-    <div className="App " style={{height:"100vh"}} >
+    <div className="App " >
     <Nav></Nav>
     
     <Routes>
@@ -33,6 +34,7 @@ function App() {
       <Route path='/signup' element={<Signup></Signup>}></Route>
       <Route path='/resetpass' element={<ResetPass></ResetPass>}></Route>
       <Route path='/myorder' element={<MyOrder></MyOrder>}></Route>
+      <Route path='/details/:id' element={<ProductDetails></ProductDetails>}></Route>
       <Route path='/managestock' element={ <RequireAuth> <ManageStock></ManageStock> </RequireAuth>}>
         <Route path='products' element={<AllProducts></AllProducts>}></Route>
         <Route path='addproducts' element={<AddNewProduct></AddNewProduct>}></Route>

@@ -13,19 +13,19 @@ const ManageStock = () => {
                 className="list-group-item list-group-item-action "
                 aria-current="true"
               >
-                Products
+                See All items
               </Link>
               <Link
                 to="/managestock/addproducts"
                 className="list-group-item list-group-item-action"
               >
-                Add new product
+                Add new item
               </Link>
               <Link
                 to="/managestock/categories"
                 className="list-group-item list-group-item-action"
               >
-                Categories
+               See Categories
               </Link>
               <Link
                 to="/managestock/addcategorie"
