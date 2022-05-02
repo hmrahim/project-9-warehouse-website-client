@@ -26,7 +26,7 @@ const {deleteProduct} = useApi()
           {products.map((product) => (
             <tr key={product._id} className="">
               <td className="text-center">{product.title}</td>
-              <td className="text-center">{product.link}</td>
+              <td className="text-center"><img width={100} height={100} src={product.link} alt="" /></td>
               
               <td className="text-center">{product.quantity}</td>
               

@@ -19,15 +19,20 @@ import Categories from './Components/Pages/Categories/Categories';
 import AddNewCategorie from './Components/Pages/Categories/AddNewCategorie';
 import UpdataProduct from './Components/Pages/UpdataProduct/UpdataProduct';
 import UpdateCategorie from './Components/Pages/UpdateCategorie/UpdateCategorie';
+import NotFound from './Components/Pages/NotFound/NotFound';
+import Banner from './Components/Pages/Banner/Banner';
+import MyOrder from './Components/Pages/MyOrder/MyOrder';
 function App() {
   return (
     <div className="App " style={{height:"100vh"}} >
     <Nav></Nav>
+    
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/signup' element={<Signup></Signup>}></Route>
       <Route path='/resetpass' element={<ResetPass></ResetPass>}></Route>
+      <Route path='/myorder' element={<MyOrder></MyOrder>}></Route>
       <Route path='/managestock' element={ <RequireAuth> <ManageStock></ManageStock> </RequireAuth>}>
         <Route path='products' element={<AllProducts></AllProducts>}></Route>
         <Route path='addproducts' element={<AddNewProduct></AddNewProduct>}></Route>
@@ -37,6 +42,7 @@ function App() {
         <Route path='updatecategorie/:id' element={<UpdateCategorie></UpdateCategorie>}></Route>
         
          </Route>
+         <Route path='*' element={<NotFound></NotFound>}></Route>
     </Routes>
     <ToastContainer></ToastContainer>
     <Footer></Footer>

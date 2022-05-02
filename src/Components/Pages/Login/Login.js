@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAUth from "../../Hooks/useAuth";
+import logo from "./google-logo-9824.png"
 
 const Login = () => {
-  const {handleSignin} = useAUth()
+  const {handleSignin,googleSignin} = useAUth()
   return (
     <div className="container my-4">
       <div className="row">
@@ -36,8 +37,9 @@ const Login = () => {
             <button className="btn btn-primary w-100" type="submit">Login</button>
             </div>
           </form>
-          <p>Are you new here ? <Link to='/signup'>Please Signup</Link></p>
-          <p>Forgot your password ? <Link to='/resetpass'>Reset password</Link></p>
+          <p onClick={googleSignin} className="text-center bg-white text-black border" style={{cursor:"pointer"}}> <img width={40} height={40} className="img-fluid" src={logo} alt="" /> Continue with google</p>
+          <p className="text-center">Are you new here ? <Link to='/signup'>Please Signup</Link></p>
+          <p className="text-center">Forgot your password ? <Link to='/resetpass'>Reset password</Link></p>
         </div>
       </div>
     </div>

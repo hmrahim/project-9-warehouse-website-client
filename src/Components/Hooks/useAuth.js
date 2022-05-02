@@ -3,6 +3,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
   useSignInWithEmailAndPassword,
+  useSignInWithGoogle
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
@@ -18,6 +19,7 @@ const useAUth = () => {
   
   const [signInWithEmailAndPassword, SigninUser, loading, error] =
     useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, googleuser, googleloading, googleerror] = useSignInWithGoogle(auth);
 
   const [sendEmailVerification, sending, verifyError] =
     useSendEmailVerification(auth);
@@ -106,8 +108,11 @@ const useAUth = () => {
    
 
   };
+  const googleSignin = ()=> {
+    signInWithGoogle()
+  }
 
-  return { handleSignin, signupHandeler, logout,resetpass };
+  return { handleSignin, signupHandeler, logout,resetpass ,googleSignin};
 };
 
 export default useAUth;

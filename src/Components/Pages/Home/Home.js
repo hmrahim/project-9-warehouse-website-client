@@ -10,6 +10,7 @@ const Home = () => {
   
   return (
     <div className="container my-4">
+      
       <h3 className="text-center text-uppercase">all products</h3>
       <div className="input-group mb-3">
         <span className="input-group-text" id="basic-addon3">
@@ -27,7 +28,7 @@ const Home = () => {
       </div>
       <div className="row">
         {
-          products.map(product=> <ProductCard key={product._id} product={product}></ProductCard> )
+          products.slice(0,6).map(product=> <ProductCard key={product._id} product={product}></ProductCard> )
         }
         
     
