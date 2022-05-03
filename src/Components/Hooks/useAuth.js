@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import axios from "axios";
+import { async } from "@firebase/util";
 
 const useAUth = () => {
     const [user, existingLoading, existingError] = useAuthState(auth);
@@ -71,7 +73,7 @@ const useAUth = () => {
     }
   };
 
-  const handleSignin = (e) => {
+  const handleSignin = async(e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -81,9 +83,10 @@ const useAUth = () => {
       toast.error("Password field cannot be empty");
     } else {
       signInWithEmailAndPassword(email, password);
-     
       toast.success("Login succesfully");
+      
     }
+
    
   };
 

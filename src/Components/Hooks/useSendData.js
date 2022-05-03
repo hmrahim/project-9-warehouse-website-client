@@ -24,7 +24,12 @@ const useSendData = ()=> {
         }else{
         const data = {title,unit,price,link,categorie,quantity,desc,email}
         const url = "http://localhost:5000/product"
-      const sendData = await  axios.post(url,data)
+      const sendData = await  axios.post(url,data,{
+        headers:{
+          "authorization":`${user?.email} ${localStorage.getItem("token")}`,
+          "Content-Type" : "Application/json"
+      }
+      })
       if(sendData){
         e.target.reset()
         toast.success("Data inserted successfully")

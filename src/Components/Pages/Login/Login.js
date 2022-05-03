@@ -2,9 +2,25 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAUth from "../../Hooks/useAuth";
 import logo from "./google-logo-9824.png"
+import {useAuthState} from "react-firebase-hooks/auth"
+import auth from "../../../firebase.init";
+import axios from "axios";
+
 
 const Login = () => {
   const {handleSignin,googleSignin} = useAUth()
+  const [user,loading,error] = useAuthState(auth)
+  if(user){
+    const email = user?.email
+    
+     axios.post("http://localhost:5000/privetapi",{email})
+     .then(data=> {
+      localStorage.setItem("token",data.data)
+      console.log(data.data);
+
+     })
+   
+  }
   return (
     <div className="container my-4">
       <div className="row">
