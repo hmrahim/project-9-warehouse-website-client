@@ -38,7 +38,7 @@ const useAUth = () => {
   const location = useLocation()
   
   const from = location.state?.from?.pathname || "/";
-  if(SigninUser){
+  if(SigninUser || googleuser){
     navigate(from, { replace: true });
 
   }
