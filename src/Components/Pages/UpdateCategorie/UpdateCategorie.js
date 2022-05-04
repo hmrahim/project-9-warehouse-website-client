@@ -8,7 +8,7 @@ const UpdateCategorie = () => {
     const navigate = useNavigate()
     const {id} = useParams()
     const [categorie,setCategorie] = useState("")
-    const url = `http://localhost:5000/categorie/${id}`
+    const url = `https://secure-tundra-45476.herokuapp.com/categorie/${id}`
     useEffect(()=> {
         fetch(url)
         .then(res=>res.json())
@@ -19,7 +19,7 @@ const UpdateCategorie = () => {
     const updatecategorie = (e)=> {
         e.preventDefault()
         const categorie = e.target.categorie.value
-        const url = `http://localhost:5000/categorie/${id}`
+        const url = `https://secure-tundra-45476.herokuapp.com/categorie/${id}`
     if(!categorie){
         toast.error("You cannot provide empty this field")
     }else{

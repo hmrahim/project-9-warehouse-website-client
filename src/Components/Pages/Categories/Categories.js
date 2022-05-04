@@ -10,7 +10,7 @@ const Categories = () => {
   const deleteData = async (id) => {
     const proced = window.confirm("Are you sure to delete data");
     if (proced) {
-      const url = `http://localhost:5000/categorie/${id}`;
+      const url = `https://secure-tundra-45476.herokuapp.com/categorie/${id}`;
       fetch(url, {
         method: "DELETE",
       })

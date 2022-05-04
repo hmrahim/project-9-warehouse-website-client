@@ -18,7 +18,7 @@ const UpdataProduct = () => {
   
     const {useCategorie} = useGetData()
     const [categories,setCategories] = useCategorie()
-    const url = `http://localhost:5000/product/${id}`
+    const url = `https://secure-tundra-45476.herokuapp.com/product/${id}`
 
    useEffect(()=> {
      fetch(url)
@@ -46,7 +46,7 @@ const updateProduct =async(e)=> {
   const desc = e.target.desc.value
 
   const data = {title,unit,price,link,categorie,quantity,desc}
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://secure-tundra-45476.herokuapp.com/product/${id}`
   if(!title || !unit || !price || !link || !categorie || !quantity || !desc){
   toast.error("You cannot provide empty any field")
 

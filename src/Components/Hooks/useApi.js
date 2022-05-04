@@ -9,7 +9,7 @@ const useApi = ()=> {
         
     const proced =   window.confirm("are you sure to delete data")
     if(proced){
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://secure-tundra-45476.herokuapp.com/product/${id}`
         fetch(url,{
             method:"DELETE"
         })

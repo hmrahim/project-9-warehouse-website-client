@@ -10,7 +10,7 @@ const useCategorie = ()=> {
     const [categories,setCategories] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:5000/categorie")
+        fetch("https://secure-tundra-45476.herokuapp.com/categorie")
         .then(res=> res.json())
         .then(data=> setCategories(data))
        

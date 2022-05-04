@@ -30,7 +30,7 @@ const ProductCard = (props) => {
 
     }
      
-    fetch("http://localhost:5000/order",{
+    fetch("https://secure-tundra-45476.herokuapp.com/order",{
       method:"POST",
       headers:{
         "Content-Type" : "Application/json"

@@ -8,7 +8,7 @@ const MyOrder = () => {
     const [user,loading,error] = useAuthState(auth)
     const [items,setItems] = useState([])
     const email = user?.email
-    const url = `http://localhost:5000/getproductbyemail?email=${email}`
+    const url = `https://secure-tundra-45476.herokuapp.com/getproductbyemail?email=${email}`
     useEffect(()=> {
         fetch(url)
         .then(res=> res.json())

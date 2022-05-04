@@ -23,7 +23,7 @@ const useSendData = ()=> {
 
         }else{
         const data = {title,unit,price,link,categorie,quantity,desc,email}
-        const url = "http://localhost:5000/product"
+        const url = "https://secure-tundra-45476.herokuapp.com/product"
       const sendData = await  axios.post(url,data,{
         headers:{
           "authorization":`${user?.email} ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ const useSendData = ()=> {
         
       }
       const data = {categorie}
-      const url = "http://localhost:5000/categorie"
+      const url = "https://secure-tundra-45476.herokuapp.com/categorie"
       const sendData = await  axios.post(url,data)
       if(sendData){
         toast.success("Data inserted successfully")

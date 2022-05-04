@@ -12,7 +12,7 @@ const ProductDetails = () => {
     
     const [] = useState("")
   const { id } = useParams();
-  const url = `http://localhost:5000/product/${id}`;
+  const url = `https://secure-tundra-45476.herokuapp.com/product/${id}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -36,7 +36,7 @@ const ProductDetails = () => {
   
 
   const updateQuantity = ()=> {
-    const url = `http://localhost:5000/updateqty/${id}`;
+    const url = `https://secure-tundra-45476.herokuapp.com/updateqty/${id}`;
     const oldQty = parseInt(details.quantity) 
     const currentQty = parseInt(quantity)
     const newQty = oldQty - currentQty

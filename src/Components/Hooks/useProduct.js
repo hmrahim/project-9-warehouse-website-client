@@ -9,7 +9,7 @@ const getProducts = ()=> {
     const [user]  = useAuthState(auth)
     const [products,setProducts] = useState([])
     useEffect(()=> {
-        fetch("http://localhost:5000/product",{
+        fetch("https://secure-tundra-45476.herokuapp.com/product",{
             method:"GET",
             headers:{
                 "authorization":`${user?.email} ${localStorage.getItem("token")}`,

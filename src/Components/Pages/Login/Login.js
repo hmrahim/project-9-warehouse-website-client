@@ -13,7 +13,7 @@ const Login = () => {
   if(user){
     const email = user?.email
     
-     axios.post("http://localhost:5000/privetapi",{email})
+     axios.post("https://secure-tundra-45476.herokuapp.com/privetapi",{email})
      .then(data=> {
       localStorage.setItem("token",data.data)
       console.log(data.data);
