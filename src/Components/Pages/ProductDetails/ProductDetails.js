@@ -113,6 +113,7 @@ const ProductDetails = () => {
             
           </div>
           <button onClick={updateQuantity} className={`${details.quantity == 0 ? "disabled" : '' } btn btn-primary text-capitalize px-3 my-4`}> {details.quantity == 0 ? "Item not Available" : 'delivered' } </button>
+            <p className="text-justify text-muted" > <strong>Details:</strong> {details.desc}</p>
         </div>
       </div>
     </div>

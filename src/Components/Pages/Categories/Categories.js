@@ -22,7 +22,17 @@ const Categories = () => {
   return (
     <div className="bg-white p-2">
       <div className="row">
-        <div className="col-md-8 col-md-offset-4">
+        <div className="col-md-12 ">
+          {
+            categories.length == 0 ? (
+              <div className="d-flex justify-content-center mt-3">
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            ) : (
+
+       
           <table class="table table-striped table-hover ">
             <thead>
               <tr>
@@ -31,9 +41,7 @@ const Categories = () => {
               </tr>
             </thead>
             <tbody>
-              {categories.length == 0 ? (
-                <h3 className="text-center">No data available</h3>
-              ) : (
+              {
                 categories.map((categorie) => (
                   <tr key={categorie._id}>
                     <td>{categorie.categorie}</td>
@@ -54,9 +62,11 @@ const Categories = () => {
                     </td>
                   </tr>
                 ))
-              )}
+              }
             </tbody>
           </table>
+               )
+              }
         </div>
       </div>
     </div>

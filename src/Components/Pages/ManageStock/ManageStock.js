@@ -33,6 +33,18 @@ const ManageStock = () => {
               >
                 Add new categorie
               </Link>
+              <Link
+                to="/managestock/allblogs"
+                className="list-group-item list-group-item-action"
+              >
+                See all blogs
+              </Link>
+              <Link
+                to="/managestock/addblog"
+                className="list-group-item list-group-item-action"
+              >
+                Add new blog
+              </Link>
              
             </div>
           </div>

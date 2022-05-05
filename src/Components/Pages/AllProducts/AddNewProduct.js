@@ -55,6 +55,12 @@ const AddNewProduct = () => {
         </div>
         <div className="mb-3">
           <label for="formGroupExampleInput" className="form-label">
+          Supplier
+          </label>
+          <input name="suply" type="text" className="form-control" />
+        </div>
+        <div className="mb-3">
+          <label for="formGroupExampleInput" className="form-label">
             Image link
           </label>
           <input name="link" type="text" className="form-control" />
@@ -63,7 +69,7 @@ const AddNewProduct = () => {
           <label for="formGroupExampleInput" className="form-label">
             Description
           </label> <br />
-          <textarea name="desc" id="" cols="50" rows="5">
+          <textarea className='form-control' name="desc" id="" cols="50" rows="5">
 
           </textarea>
         </div>

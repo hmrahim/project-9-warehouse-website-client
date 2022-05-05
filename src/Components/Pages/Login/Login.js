@@ -7,7 +7,7 @@ import auth from "../../../firebase.init";
 import axios from "axios";
 
 
-const Login = () => {
+const Login = () => { 
   const {handleSignin,googleSignin} = useAUth()
   const [user,loading,error] = useAuthState(auth)
   if(user){

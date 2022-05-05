@@ -18,6 +18,15 @@ const MyOrder = () => {
     const {deleteProduct} = useApi()
     return (
         <div className='container' style={{minHeight:"100vh"}}>
+          {
+            items.length == 0 ? (
+              <div className="d-flex justify-content-center align-items-center mt-5">
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            ) : (
+          
               <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -29,7 +38,10 @@ const MyOrder = () => {
           </tr>
         </thead>
         <tbody>
-          {items.map((product) => (
+          
+          {
+           
+          items.map((product) => (
             <tr key={product._id} className="">
               <td className="text-center">{product.title}</td>
               <td className="text-center"><img width={100} height={100} src={product.link} alt="" /></td>
@@ -42,9 +54,12 @@ const MyOrder = () => {
               <Link onClick={()=> deleteProduct(product._id)} className="btn btn-danger btn-sm ms-2 mt-2" to="">Delete</Link>
               </td>
             </tr>
-          ))}
+          ))
+          
+          }
         </tbody>
       </table>
+            )}
             
         </div>
     );

@@ -10,14 +10,25 @@ const AllProducts = () => {
 const {deleteProduct} = useApi()
   return (
     <div className="p-1">
-     <div className="row">
-       <div className="col-md-12">
+     
+         {
+           products.length == 0 ? (
+            <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+           ) :
+           (
+
+       
        <table className="table table-striped table-hover">
         <thead>
           <tr>
-            <th width="10%">Name</th>
-            <th width="10%">Image</th>
-            <th width="10%">Available Quantity</th>
+            <th width="10%" className="text-center">Name</th>
+            <th className="text-center">Image</th>
+            <th width="10%" className="text-center">Available Quantity</th>
+            <th className="text-center">Supplier</th>
             
             <th>Action</th>
           </tr>
@@ -29,6 +40,7 @@ const {deleteProduct} = useApi()
               <td className="text-center"><img width={100} height={100} src={product.link} alt="" /></td>
               
               <td className="text-center">{product.quantity}</td>
+              <td className="text-center">{product.suply}</td>
               
               <td>
               <Link className="btn btn-primary btn-sm ms-2 mt-2" to={`/managestock/updateproduct/${product._id}`}>Edit</Link>
@@ -39,9 +51,10 @@ const {deleteProduct} = useApi()
           ))}
         </tbody>
       </table>
+          )
+        }
        </div>
-     </div>
-    </div>
+   
   );
 };
 

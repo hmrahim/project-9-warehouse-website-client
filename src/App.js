@@ -23,6 +23,11 @@ import NotFound from './Components/Pages/NotFound/NotFound';
 import Banner from './Components/Pages/Banner/Banner';
 import MyOrder from './Components/Pages/MyOrder/MyOrder';
 import ProductDetails from './Components/Pages/ProductDetails/ProductDetails';
+import Blog from './Components/Pages/Blog/Blog';
+import AddBlog from './Components/Pages/Blog/AddBlog';
+import AllBlogs from './Components/Pages/Blog/AllBlogs';
+import UpdateBlog from './Components/Pages/Blog/UpdateBlog';
+
 function App() {
   return (
     <div className="App " >
@@ -33,7 +38,8 @@ function App() {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/signup' element={<Signup></Signup>}></Route>
       <Route path='/resetpass' element={<ResetPass></ResetPass>}></Route>
-      <Route path='/myorder' element={<MyOrder></MyOrder>}></Route>
+      <Route path='/myitems' element={<MyOrder></MyOrder>}></Route>
+      <Route path='/blog' element={<Blog></Blog>}></Route>
       <Route path='/details/:id' element={<ProductDetails></ProductDetails>}></Route>
       <Route path='/managestock' element={ <RequireAuth> <ManageStock></ManageStock> </RequireAuth>}>
         <Route path='products' element={<AllProducts></AllProducts>}></Route>
@@ -42,6 +48,9 @@ function App() {
         <Route path='addcategorie' element={<AddNewCategorie></AddNewCategorie>}></Route>
         <Route path='updateproduct/:id' element={<UpdataProduct></UpdataProduct>}></Route>
         <Route path='updatecategorie/:id' element={<UpdateCategorie></UpdateCategorie>}></Route>
+        <Route path='addblog' element={<AddBlog></AddBlog>}></Route>
+        <Route path='allblogs' element={<AllBlogs></AllBlogs>}></Route>
+        <Route path='updateblog/:id' element={<UpdateBlog></UpdateBlog>}></Route>
         
          </Route>
          <Route path='*' element={<NotFound></NotFound>}></Route>

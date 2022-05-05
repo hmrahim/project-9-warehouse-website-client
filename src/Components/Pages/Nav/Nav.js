@@ -17,26 +17,48 @@ const Nav = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item m-0">
-                <NavLink activeClassName="active-class" className="nav-link  m-0" aria-current="page" to="/">Home</NavLink>
-              </li>
-              <li className="nav-item m-0">
-                <NavLink activeClassName="active-class" className="nav-link  m-0" aria-current="page" to="/myorder">My Order</NavLink>
-              </li>
-              <li className="nav-item m-0">
-                <NavLink activeClassName="active-class" className="nav-link  m-0" aria-current="page" to="/managestock">Manage Inventory</NavLink>
-              </li>
-              
+                <NavLink  className="nav-link  m-0" aria-current="page" to="/">Home</NavLink>
                 
+              </li>
+              <li className="nav-item m-0">
+              <NavLink  className="nav-link  m-0" aria-current="page" to="/blog">Blog</NavLink>
+                
+              </li>
+              {
+                user ? 
+             <>
               
+                  <li className="nav-item m-0">
+                    <NavLink  className="nav-link  m-0" aria-current="page" to="/myitems">My Items</NavLink>
+                  </li>
+                  <li className="nav-item m-0">
+                    <NavLink  className="nav-link  m-0" aria-current="page" to="/managestock/addproducts">Add Items</NavLink>
+                  </li>
+                  <li className="nav-item m-0">
+                    <NavLink  className="nav-link  m-0" aria-current="page" to="/managestock">Manage Inventory</NavLink>
+                  </li>
+                  
+
+                  <li className="nav-item m-0">  <a onClick={logout} className="nav-link text-white   mx-2 " aria-current="page" href='#'>Logout</a></li>
+                
+                  </>
+                  :
+                  <li className="nav-item m-0"> <Link className="nav-link text-white   mx-2 " aria-current="page" to="/login">Login</Link></li>
+
+                  }
+
            
+
+             
+                  
+                  
             </ul>
-            {
-              user ?
+          
+        
             
-            <a onClick={logout} className="nav-link text-white   mx-2 " aria-current="page" href='#'>Logout</a>
-            :
-            <Link className="nav-link text-white   mx-2 " aria-current="page" to="/login">Login</Link>
-          }
+           
+            
+            
           </div>
         </div>
       </nav>

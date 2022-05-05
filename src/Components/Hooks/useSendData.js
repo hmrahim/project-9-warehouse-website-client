@@ -17,12 +17,14 @@ const useSendData = ()=> {
         const categorie = e.target.categorie.value
         const quantity = e.target.quantity.value
         const desc = e.target.desc.value
+        const suply = e.target.suply.value
         const email = user.email
-        if(!title || !unit || !price || !link || !categorie || !quantity || !desc){
+        if(!title || !unit || !price || !link || !categorie || !quantity || !desc || !suply){
           toast.error("You cannot provide empty any field")
 
         }else{
-        const data = {title,unit,price,link,categorie,quantity,desc,email}
+        const data = {title,unit,price,link,categorie,quantity,desc,suply,email}
+        
         const url = "https://secure-tundra-45476.herokuapp.com/product"
       const sendData = await  axios.post(url,data,{
         headers:{
