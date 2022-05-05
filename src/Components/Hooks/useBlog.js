@@ -13,7 +13,7 @@ const useBlog = ()=> {
         
     
         useEffect(()=>{
-            fetch("http://localhost:5000/blog")
+            fetch("https://secure-tundra-45476.herokuapp.com/blog")
             .then(res=> res.json())
             .then(data=> setBlogs(data))
            
@@ -32,7 +32,7 @@ const useBlog = ()=> {
         if(!title || !desc){
             toast.error("You cannot empty any field!")
         }else{
-            const data =await axios.post("http://localhost:5000/blog",obj)
+            const data =await axios.post("https://secure-tundra-45476.herokuapp.com/blog",obj)
        if(data){
            toast.success("Blog posted succesfully!")
            e.target.reset()

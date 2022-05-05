@@ -11,7 +11,7 @@ const UpdateBlog = () => {
     const navigate = useNavigate()
    
     const {id} = useParams()
-    const url = `http://localhost:5000/blog/${id}`
+    const url = `https://secure-tundra-45476.herokuapp.com/blog/${id}`
    useEffect(()=> {
     axios.get(url)
     .then(data=> {

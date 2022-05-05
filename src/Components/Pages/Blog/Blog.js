@@ -8,7 +8,13 @@ const Blog = () => {
     return (
         <div className='container' style={{minHeight:"100vh"}}>
             <div className="border rounded p-4 m-4">
-                {
+                {blogs.length==0 ? (
+                     <div className="d-flex justify-content-center">
+                     <div className="spinner-border" role="status">
+                       <span className="visually-hidden">Loading...</span>
+                     </div>
+                   </div>
+                ) :(
                     blogs.map(blog=>  <article className=' p-3 rounded shadow-sm my-3'>
                     <h2>{blog.title}</h2>
                     <hr />
@@ -18,7 +24,7 @@ const Blog = () => {
                             <p className=' border px-4 mx-2 my-2 bg-secondary text-white rounded' style={{cursor:"pointer"}}>Unlike</p> 
                             <p className=' border px-4 mx-2 my-2 bg-secondary text-white rounded ' style={{cursor:"pointer"}}>Comment</p>
                             </div>
-                    </article>)
+                    </article>))
                 }
          
             

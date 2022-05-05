@@ -17,7 +17,7 @@ const AllBlogs = () => {
     
       const remening = Blogs.filter(blog=> blog._id != id)
       if(proced){
-          const url = `http://localhost:5000/blog/${id}`
+          const url = `https://secure-tundra-45476.herokuapp.com/blog/${id}`
           const data = await axios.delete(url)
           setBlog(remening)
           if(data){

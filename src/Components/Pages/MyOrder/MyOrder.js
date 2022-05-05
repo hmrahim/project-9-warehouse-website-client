@@ -32,7 +32,8 @@ const MyOrder = () => {
           <tr>
             <th className='text-center'>Name</th>
             <th className='text-center' >Image</th>
-            <th className='text-center' >Available Quantity</th>
+            <th width="10%" className='text-center' >Available Quantity</th>
+            <th className='text-center' >Supplier</th>
             
             <th>Action</th>
           </tr>
@@ -47,6 +48,7 @@ const MyOrder = () => {
               <td className="text-center"><img width={100} height={100} src={product.link} alt="" /></td>
               
               <td className="text-center">{product.quantity}</td>
+              <td className="text-center">{product.suply}</td>
               
               <td>
               <Link className="btn btn-primary btn-sm ms-2 mt-2" to={`/managestock/updateproduct/${product._id}`}>Edit</Link>
