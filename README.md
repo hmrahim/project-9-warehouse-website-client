@@ -1,6 +1,6 @@
 # B.Baria Fruits House
 
-Visit b.baria fruits houre  [Create React App](https://warehouse-c7200.web.app/).
+Visit b.baria fruits houre  [B.baria fruits house](https://warehouse-c7200.web.app/).
 
 ## Available Fetures
 
