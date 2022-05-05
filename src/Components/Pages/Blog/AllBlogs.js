@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 const AllBlogs = () => {
     const {GetBlog} = useBlog()
     const [Blogs,setBlog] = GetBlog()
 
 
     const DeleteBlog = async(id)=> {
-      const proced = window.confirm("are you sure to delete data")
+     const proced = window.confirm("are you sure to delete data")
+    //const proced = alert()
     
       const remening = Blogs.filter(blog=> blog._id != id)
       if(proced){
@@ -23,6 +26,28 @@ const AllBlogs = () => {
 
       }
      
+
+  }
+
+
+  const alert = ()=> {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
 
   }
   
