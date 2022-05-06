@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useGetData from "../../Hooks/UseGetData";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Categories = () => {
   const {useCategorie} = useGetData()
@@ -21,6 +22,9 @@ const Categories = () => {
 
   return (
     <div className="bg-white p-2">
+       <Helmet>
+            <title className='text-capitalize'>All categorie - B.baria fruits house</title>
+          </Helmet>
       <div className="row">
         <div className="col-md-12 ">
           {

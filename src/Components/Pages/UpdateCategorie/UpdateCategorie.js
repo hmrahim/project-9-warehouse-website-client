@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { ToastContainer, toast } from "react-toastify";
@@ -47,6 +48,9 @@ const UpdateCategorie = () => {
 
     return (
        <div>
+          <Helmet>
+            <title className='text-capitalize'>Update categorie - B.baria fruits house</title>
+          </Helmet>
             <h2 className="text-center">Add New Categorie</h2> <hr />
       <form  onSubmit={updatecategorie}  action="">
         <div className="mb-3">

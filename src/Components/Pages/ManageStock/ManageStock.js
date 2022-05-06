@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, Outlet, NavLink } from "react-router-dom";
 
 const ManageStock = () => {
   return (
     <div className="container my-4" style={{minHeight:"100vh"}} >
+       <Helmet>
+            <title className='text-capitalize'>Manage inventory - B.baria fruits house</title>
+          </Helmet>
       <div className="row gx-3">
         <div className="col-md-3 ">
           <div className="border p-1">

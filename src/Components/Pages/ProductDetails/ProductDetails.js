@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -66,6 +67,9 @@ const ProductDetails = () => {
   }
   return (
     <div className="container bg-white my-4" >
+       <Helmet>
+            <title className='text-capitalize'>Product details - B.baria fruits house</title>
+          </Helmet>
       <div className="row border">
         <div className="col-md-6">
           <div>

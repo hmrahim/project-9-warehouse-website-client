@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import useGetData from '../../Hooks/UseGetData';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet-async';
 
 const UpdataProduct = () => {
   const {id} = useParams()
@@ -67,6 +68,9 @@ const updateProduct =async(e)=> {
 
     return (
         <div className='px-2'>
+           <Helmet>
+            <title className='text-capitalize'>Update Product - B.baria fruits house</title>
+          </Helmet>
         <h2 className="text-center">Update Product</h2> <hr />
         <form onSubmit={updateProduct}  action="">
           <div className="mb-3">

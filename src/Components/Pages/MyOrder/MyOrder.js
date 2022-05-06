@@ -3,6 +3,7 @@ import {useAuthState} from "react-firebase-hooks/auth"
 import auth from "../../../firebase.init"
 import {Link} from "react-router-dom"
 import { useApi } from '../../Hooks/useApi';
+import { Helmet } from 'react-helmet-async';
 
 const MyOrder = () => {
     const [user,loading,error] = useAuthState(auth)
@@ -18,6 +19,9 @@ const MyOrder = () => {
     const {deleteProduct} = useApi()
     return (
         <div className='container' style={{minHeight:"100vh"}}>
+           <Helmet>
+            <title className='text-capitalize'>My items - B.baria fruits house</title>
+          </Helmet>
           {
             items.length == 0 ? (
               <div className="d-flex justify-content-center align-items-center mt-5">

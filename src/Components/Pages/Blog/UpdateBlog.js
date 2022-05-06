@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet-async';
 
 
 const UpdateBlog = () => {
@@ -41,6 +42,9 @@ const UpdateBlog = () => {
     }
     return (
         <div>
+           <Helmet>
+            <title className='text-capitalize'>Update blog - B.baria fruits house</title>
+          </Helmet>
       <h2 className="text-center">Update Blog</h2> <hr />
       <form onSubmit={updateBlog}  action="" className="p-2">
         <div className="mb-3">

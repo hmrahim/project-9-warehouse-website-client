@@ -12,6 +12,7 @@ Visit b.baria fruits houre  [B.baria fruits house](https://warehouse-c7200.web.a
 * using react nested-route for make a simple dashboard
 * using email and password base authentication
 * using social account authentication
+* set dynamic page title using react-helmat-async
 
 ### `npm start`
 

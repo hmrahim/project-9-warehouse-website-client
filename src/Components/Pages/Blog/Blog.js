@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import useBlog from '../../Hooks/useBlog';
 
 const Blog = () => {
@@ -7,6 +8,9 @@ const Blog = () => {
     
     return (
         <div className='container' style={{minHeight:"100vh"}}>
+             <Helmet>
+            <title className='text-capitalize'>Blogs - B.baria fruits house</title>
+          </Helmet>
             <div className="border rounded p-4 m-4">
                 {blogs.length==0 ? (
                      <div className="d-flex justify-content-center">

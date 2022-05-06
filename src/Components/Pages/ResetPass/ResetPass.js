@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import useAUth from '../../Hooks/useAuth';
 
@@ -6,6 +7,9 @@ const ResetPass = () => {
   const {resetpass} = useAUth()
     return (
         <div className="container my-4" style={{minHeight:"100vh"}}>
+           <Helmet>
+            <title className='text-capitalize'>Reset password- B.baria fruits house</title>
+          </Helmet>
       <div className="row">
         <div className="col-md-6  col-offset-4 mx-auto p-3 bg-white rounded shadow">
             <h2 className="text-center">Reset Password</h2> <hr />

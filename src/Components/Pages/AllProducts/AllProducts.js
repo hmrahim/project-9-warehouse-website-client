@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useApi } from "../../Hooks/useApi";
 import getProducts from "../../Hooks/useProduct";
@@ -10,6 +11,9 @@ const AllProducts = () => {
 const {deleteProduct} = useApi()
   return (
     <div className="p-1">
+       <Helmet>
+            <title className='text-capitalize'>All items - B.baria fruits house</title>
+          </Helmet>
      
          {
            products.length == 0 ? (

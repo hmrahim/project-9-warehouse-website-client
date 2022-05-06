@@ -3,13 +3,20 @@ import Banner from "../Banner/Banner";
 import ProductCard from "../ProductCard/ProductCard";
 import Products from "../Products/Products";
 import getProducts from "../../Hooks/useProduct";
+import { Helmet } from "react-helmet-async";
+import useGetData from "../../Hooks/UseGetData";
 
 const Home = () => {
   const { useProducts } = getProducts();
   const [products, setProducts] = useProducts();
+  const {useCategorie} = useGetData()
+  const [categories,setCategories] = useCategorie()
 
   return (
     <div className=" " style={{ minHeight: "100vh" }}>
+       <Helmet>
+            <title className='text-capitalize'>Home - B.baria fruits house</title>
+          </Helmet>
       <Banner></Banner>
 
       <div className="container my-4">
@@ -21,12 +28,11 @@ const Home = () => {
         </span>
         <select name="" className="form-control" id="">
           <option selected>Choose s Category</option>
-          <option value="">Fresh Fruits</option>
-          <option value="">Fresh Fruits</option>
-          <option value="">Fresh Fruits</option>
-          <option value="">Fresh Fruits</option>
-          <option value="">Fresh Fruits</option>
-          <option value="">Fresh Fruits</option>
+          {
+            categories.map(categories=> <option value={categories.categorie}>{categories.categorie}</option>)
+          }
+          
+         
         </select>
       </div>
       <div className="row">

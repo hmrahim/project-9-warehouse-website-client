@@ -1,6 +1,7 @@
 import React from 'react';
 import useSendData from '../../Hooks/useSendData';
 import useGetData from '../../Hooks/UseGetData';
+import { Helmet } from 'react-helmet-async';
 
 const AddNewProduct = () => {
   const {useCategorie} = useGetData()
@@ -9,6 +10,9 @@ const AddNewProduct = () => {
     const {sendProductDataHandeler} = useSendData()
     return (
         <div className='px-2'>
+          <Helmet>
+            <title className='text-capitalize'>Add new item - B.baria fruits house</title>
+          </Helmet>
       <h2 className="text-center">Add New Product</h2> <hr />
       <form onSubmit={sendProductDataHandeler} action="">
         <div className="mb-3">

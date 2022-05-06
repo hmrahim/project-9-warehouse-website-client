@@ -5,6 +5,7 @@ import logo from "./google-logo-9824.png"
 import {useAuthState} from "react-firebase-hooks/auth"
 import auth from "../../../firebase.init";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => { 
@@ -23,6 +24,9 @@ const Login = () => {
   }
   return (
     <div className="container my-4">
+       <Helmet>
+            <title className='text-capitalize'>Login - B.baria fruits house</title>
+          </Helmet>
       <div className="row">
         <div className="col-md-6  col-offset-4 mx-auto p-3 bg-white rounded shadow">
             <h2 className="text-center">Login</h2> <hr />

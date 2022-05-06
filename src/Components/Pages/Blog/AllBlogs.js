@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { Helmet } from 'react-helmet-async';
 const AllBlogs = () => {
     const {GetBlog} = useBlog()
     const [Blogs,setBlog] = GetBlog()
@@ -57,6 +58,9 @@ const AllBlogs = () => {
     
     return (
         <div>
+           <Helmet>
+            <title className='text-capitalize'>All blogs - B.baria fruits house</title>
+          </Helmet>
             <h1 className="text-center text-capitalize">all blogs</h1>
             <table class="table table-striped table-hover ">
             <thead>
