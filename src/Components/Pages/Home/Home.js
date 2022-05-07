@@ -5,6 +5,8 @@ import Products from "../Products/Products";
 import getProducts from "../../Hooks/useProduct";
 import { Helmet } from "react-helmet-async";
 import useGetData from "../../Hooks/UseGetData";
+import { GoogleMap } from "@react-google-maps/api";
+import MyMap from "../GoogleMap/GoogleMap";
 
 const Home = () => {
   const { useProducts } = getProducts();
@@ -52,7 +54,7 @@ const Home = () => {
         )}
       </div>
       </div>
-
+<MyMap></MyMap>
     </div>
   );
 };

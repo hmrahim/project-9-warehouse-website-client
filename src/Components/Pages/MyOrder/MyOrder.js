@@ -31,12 +31,14 @@ const MyOrder = () => {
             </div>
             ) : (
           
-              <table className="table table-striped table-hover">
+              <div className="" style={{overflowX:'auto'}}>
+
+              <table className="table table-striped table-hover w-100">
         <thead>
           <tr>
             <th className='text-center'>Name</th>
             <th className='text-center' >Image</th>
-            <th width="10%" className='text-center' >Available Quantity</th>
+            <th className='text-center' >Available Quantity</th>
             <th className='text-center' >Supplier</th>
             
             <th>Action</th>
@@ -65,6 +67,7 @@ const MyOrder = () => {
           }
         </tbody>
       </table>
+              </div>
             )}
             
         </div>

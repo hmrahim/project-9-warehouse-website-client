@@ -25,7 +25,7 @@ const {deleteProduct} = useApi()
            ) :
            (
 
-       
+       <div className="" style={{overflowX:'auto'}}>
        <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -55,6 +55,7 @@ const {deleteProduct} = useApi()
           ))}
         </tbody>
       </table>
+      </div>
           )
         }
        </div>
